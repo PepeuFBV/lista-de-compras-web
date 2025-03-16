@@ -9,7 +9,7 @@ const Input: React.FC<InputProps> = ({ label = 'Item', className, id, ...props }
     return (
         <div className={cn('group flex flex-col gap-[8px]', className)}>
             {label && (
-                <label className="text-secondary transition-colors group-focus-within:text-purple-light">{label}</label>
+                <label className="text-xs text-secondary transition-colors group-focus-within:text-purple-light">{label}</label>
             )}
             <input
                 data-slot="input"
