@@ -1,22 +1,52 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #0c0c0d; /* gray-600 */
+    --background-secondary: #17171A; /* gray-500 */
+    --muted: #111112; /* gray-400 */
+    --border: #252529; /* gray-300 */
+    --foreground: #FBF9FE; /* gray-100 */
+    --secondary: #AFABB6; /* gray-200 */
+    --purple-light: #A881E6;
+    --purple: #7450AC;
+    --purple-dark: #523480;
+    --sucess: #2F723D;
+    --success-light: #4E995E;
+    --pink: #DB5BBF;
+    --pink-dark: #251622;
+    --orange: #E07B67;
+    --orange-dark: #261A17;
+    --yellow: #BB9F3A;
+    --yellow-dark: #211E12;
+    --green: #8CAD51;
+    --green-dark: #1C2015;
+    --blue: #7B94CB;
+    --blue-dark: #1A1D23;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-background-secondary: var(--background-secondary);
+    --color-muted: var(--muted);
+    --color-border: var(--border);
+    --color-secondary: var(--secondary);
+    --color-purple-light: var(--purple-light);
+    --color-purple: var(--purple);
+    --color-purple-dark: var(--purple-dark);
+    --color-sucess: var(--sucess);
+    --color-success-light: var(--success-light);
+    --color-pink: var(--pink);
+    --color-pink-dark: var(--pink-dark);
+    --color-orange: var(--orange);
+    --color-orange-dark: var(--orange-dark);
+    --color-yellow: var(--yellow);
+    --color-yellow-dark: var(--yellow-dark);
+    --color-green: var(--green);
+    --color-green-dark: var(--green-dark);
+    --color-blue: var(--blue);
+    --color-blue-dark: var(--blue-dark);
+    --font-inter: var(--font-inter);
 }
 
 body {
