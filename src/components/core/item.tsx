@@ -12,7 +12,7 @@ interface ItemProps {
     className?: string
 }
 const Item: React.FC<ItemProps> = ({ item, className }) => {
-    const { name, ammount, unit, type, status: initialStatus } = item
+    const { name, amount, unit, type, status: initialStatus } = item
     const [status, setStatus] = useState(initialStatus)
 
     function handleCheckboxClick() {
@@ -35,7 +35,7 @@ const Item: React.FC<ItemProps> = ({ item, className }) => {
                 <Checkbox checked={status === 'done'} onClick={handleCheckboxClick} />
                 <div className='flex flex-col'>
                     <h2 className={nameClasses}>{name}</h2>
-                    <p className={amountClasses}>{ammount} {unit}</p>
+                    <p className={amountClasses}>{amount} {unit}</p>
                 </div>
             </div>
             <div className='flex items-center gap-3'>

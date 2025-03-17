@@ -3,7 +3,8 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "next dev",
+        "dev": "cross-env NODE_ENV=development next dev",
+        "dev-server": "cross-env NODE_ENV=development next dev",
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
@@ -12,6 +13,7 @@
     "dependencies": {
         "@radix-ui/react-checkbox": "^1.1.4",
         "@radix-ui/react-select": "^2.1.6",
+        "axios": "^1.8.3",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "lucide": "^0.482.0",
@@ -28,6 +30,7 @@
         "@types/node": "^20",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+        "cross-env": "^7.0.3",
         "eslint": "^9",
         "eslint-config-next": "15.2.2",
         "tailwindcss": "^4",
