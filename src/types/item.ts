@@ -1,5 +1,14 @@
 import { ReactNode } from 'react'
 
+type Item = {
+    id: string
+    name: string
+    type: string
+    ammount: number
+    unit: string
+    status: 'done' | 'todo'
+}
+
 type ItemType = {
     name: string
     icon: ReactNode,
@@ -7,4 +16,4 @@ type ItemType = {
     iconClassname: string
 }
 
-export type { ItemType }
+export type { Item, ItemType }
