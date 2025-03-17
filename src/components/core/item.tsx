@@ -20,7 +20,7 @@ const Item: React.FC<ItemProps> = ({ item, className }) => {
     }
 
     const containerClasses = cn(
-        'w-full max-w-[636px] h-[68px] flex gap-10 justify-between items-center bg-background-secondary border border-border rounded-lg px-4 transition-colors duration-500 ease-in-out',
+        'w-full max-w-[720px] h-[68px] flex gap-10 justify-between items-center bg-background-secondary border border-border rounded-lg px-4 transition-colors duration-500 ease-in-out',
         { 'bg-muted border-background-secondary': status === 'done' },
         className
     )
