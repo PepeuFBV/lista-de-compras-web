@@ -1,7 +1,6 @@
 import { ItemRequest } from '@/types/item'
 import { backendInstance } from '@/lib/axios'
 import { Item, ItemResponse } from '@/types/item'
-import axios from 'axios'
 
 async function getItems(): Promise<Item[]> {
     try {
