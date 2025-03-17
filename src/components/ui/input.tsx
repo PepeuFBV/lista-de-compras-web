@@ -8,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 const Input: React.FC<InputProps> = ({ label = 'Item', inputClassName, className, id, ...props }) => {
     return (
-        <div className={cn('group flex flex-col gap-[8px]', className)}>
+        <div className={cn('group flex flex-col gap-[6px]', className)}>
             {label && (
                 <label className="text-xs text-secondary transition-colors group-focus-within:text-purple-light">{label}</label>
             )}
