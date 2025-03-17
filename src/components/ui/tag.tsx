@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 import { cva, type VariantProps } from "class-variance-authority"
-import { itemTypes } from '@/data/item'
+import { itemTypes } from '@/data/item-types'
 
 const tagVariants = cva(
     'w-fit flex items-center justify-center h-[32px] py-[8px] px-[16px] rounded-full bg-primary text-primary-foreground text-xs font-medium lowercase gap-[6px]',
