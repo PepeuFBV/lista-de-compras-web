@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { itemTypes } from '@/data/item'
 
 const tagVariants = cva(
-    'w-fit flex items-center justify-center h-[32px] py-[8px] px-[16px] rounded-full bg-primary text-primary-foreground text-xs font-medium gap-[6px]',
+    'w-fit flex items-center justify-center h-[32px] py-[8px] px-[16px] rounded-full bg-primary text-primary-foreground text-xs font-medium lowercase gap-[6px]',
     {
         variants: {
             type: itemTypes.reduce((acc, item) => {
