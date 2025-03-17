@@ -10,7 +10,7 @@
     --purple-light: #A881E6;
     --purple: #7450AC;
     --purple-dark: #523480;
-    --sucess: #2F723D;
+    --success: #2F723D;
     --success-light: #4E995E;
     --pink: #DB5BBF;
     --pink-dark: #251622;
@@ -34,7 +34,7 @@
     --color-purple-light: var(--purple-light);
     --color-purple: var(--purple);
     --color-purple-dark: var(--purple-dark);
-    --color-sucess: var(--sucess);
+    --color-success: var(--success);
     --color-success-light: var(--success-light);
     --color-pink: var(--pink);
     --color-pink-dark: var(--pink-dark);
@@ -54,30 +54,6 @@ body {
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    line-height: 130%;
-    font-weight: 400;
-}
-
-* {
-    font-size: 12px;
-    line-height: 130%;
-    font-weight: 600;
-}
-
-h1 {
-    font-size: 24px;
     line-height: 100%;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 14px;
-    line-height: 130%;
-    font-weight: 700;
-}
-
-button {
-    font-size: 14px;
-    line-height: 130%;
-    font-weight: 600;
+    font-weight: 400;
 }
