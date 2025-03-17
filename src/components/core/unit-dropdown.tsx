@@ -23,7 +23,7 @@ const UnitDropdown = () => {
                     (value) => setUnit(value as string)
                 }
             >
-                <SelectTrigger className='w-[72px] rounded-l-none mt-[22px]' triggerClassName='text-secondary text-[10px] leading-none uppercase'>
+                <SelectTrigger className='w-[72px] rounded-l-none mt-6' triggerClassName='text-secondary text-[10px] leading-none uppercase'>
                     <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
