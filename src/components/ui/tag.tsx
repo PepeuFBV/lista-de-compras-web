@@ -3,7 +3,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { itemTypes } from '@/data/item-types'
 
 const tagVariants = cva(
-    'w-fit flex items-center justify-center h-[32px] py-[8px] px-[16px] rounded-full bg-primary text-primary-foreground text-xs font-medium lowercase gap-[6px]',
+    'w-fit flex items-center justify-center h-[32px] py-[8px] px-[8px] md:px-[16px] rounded-full bg-primary text-primary-foreground text-xs font-medium lowercase gap-[6px]',
     {
         variants: {
             type: itemTypes.reduce((acc, item) => {
@@ -27,7 +27,7 @@ const Tag: React.FC<TagProps> = ({ type, className, ...props }) => {
             {...props}
         >
             {IconComponent}
-            {type}
+            <p className='hidden md:block'>{type}</p>
         </div>
     )
 }
