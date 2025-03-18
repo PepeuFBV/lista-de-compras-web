@@ -59,6 +59,8 @@ Lista de Compras Web is a web application designed to help users manage their sh
     NEXT_PUBLIC_API_URL={backend-api-url}
     ```
 
+Your backend API URL should be something like `http://localhost:3001` if you are running the backend locally. Or you can use the deployed backend URL.
+
 ### Running the Application
 
 1. Start the development server:
