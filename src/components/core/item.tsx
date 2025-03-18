@@ -9,15 +9,20 @@ import { cn } from '@/lib/utils'
 
 interface ItemProps {
     item: ItemData
+    updateItem: (item: ItemData) => void
     className?: string
 }
-const Item: React.FC<ItemProps> = ({ item, className }) => {
+const Item: React.FC<ItemProps> = ({ item, updateItem, className }) => {
 
-    const { name, amount, unit, type, status: initialStatus } = item
-    const [status, setStatus] = useState(initialStatus)
+    const { name, amount, unit, type, status } = item
 
-    function handleCheckboxClick() {
-        setStatus(status === 'done' ? 'todo' : 'done')
+    async function handleCheckboxClick() {
+        const updatedItem: ItemData = { ...item, status: status === 'done' ? 'todo' : 'done' }
+        try {
+            await updateItem(updatedItem)
+        } catch (error) {
+            throw error
+        }
     }
 
     function capitalizeFirstLetter(str: string) {
