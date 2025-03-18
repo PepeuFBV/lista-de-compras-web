@@ -72,7 +72,9 @@ const AddItem: React.FC<AddItemProps> = ({ className }) => {
             unit: parsedUnit(unit as string),
             status: 'todo'
         }
-
+        if (newItem.unit === 'un' || newItem.unit === 'un.' || newItem.unit === 'unidade') newItem.unit = 'unidades'
+        else if (newItem.unit === 'kg' || newItem.unit === 'quilo') newItem.unit = 'quilos'
+        else if (newItem.unit === 'l' || newItem.unit === 'litro') newItem.unit = 'litros'
         await create(newItem)
         setError('')
         resetValues()
