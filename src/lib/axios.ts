@@ -2,10 +2,6 @@ import axios from 'axios'
 
 let apiUrl: string = process.env.NEXT_PUBLIC_API_URL as string
 
-if (process.env.NODE_ENV === 'development') {
-    apiUrl = 'http://localhost:3001'
-}
-
 const backendInstance = axios.create({
     baseURL: apiUrl,
     headers: {

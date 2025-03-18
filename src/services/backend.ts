@@ -36,7 +36,17 @@ async function createItem(item: ItemRequest) {
             status: item.status.toLowerCase()
         }
         const response = await backendInstance.post('/items', newItem)
-        return response.data
+        const id: string = response.data.result.insertedId
+        type PossibleTypes = 'Padaria' | 'Legume' | 'Fruta' | 'Bebida' | 'Carne'
+        const returnItem: Item = {
+            id,
+            name: newItem.name,
+            type: newItem.type.toLowerCase() as PossibleTypes,
+            amount: newItem.amount,
+            unit: newItem.unit.toLowerCase(),
+            status: 'todo'
+        }
+        return returnItem
     } catch (error) {
         throw error
     }
