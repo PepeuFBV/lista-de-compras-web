@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useContext } from 'react'
 import { UnitDropdown } from '@/components/core/unit-dropdown'
 import { Input } from '@/components/ui/input'
 import {
@@ -7,6 +9,7 @@ import {
     SelectContent,
     SelectItem
 } from '@/components/ui/select'
+import { ItemsContext } from '@/context/context'
 import { itemTypes } from '@/data/item-types'
 import { AddButton } from '@/components/core/add-button'
 import { SelectValue } from '@radix-ui/react-select'
@@ -14,8 +17,18 @@ import { Item } from '@/components/core/item'
 import type { Item as ItemType } from '@/types/item'
 
 export default function Home() {
+    const context = useContext(ItemsContext)
 
+    if (!context) {
+        throw new Error('YourComponent must be used within a ContextProvider')
+    }
 
+    const { items, setItems } = context
+
+    // Example usage of items and setItems
+    const addItem = (newItem: ItemType) => {
+        setItems([...items, newItem])
+    }
 
     return (
         <main className='h-full w-full flex flex-col justify-center items-center'>
