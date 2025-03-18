@@ -19,6 +19,10 @@ const Item: React.FC<ItemProps> = ({ item, className }) => {
         setStatus(status === 'done' ? 'todo' : 'done')
     }
 
+    function capitalizeFirstLetter(str: string) {
+        return str.charAt(0).toUpperCase() + str.slice(1)
+    }
+
     const containerClasses = cn(
         'w-full max-w-[720px] h-[68px] flex gap-10 justify-between items-center bg-background-secondary border border-border rounded-lg px-4 transition-colors duration-500 ease-in-out',
         { 'bg-muted border-background-secondary': status === 'done' },
@@ -39,7 +43,7 @@ const Item: React.FC<ItemProps> = ({ item, className }) => {
                 </div>
             </div>
             <div className='flex items-center gap-3'>
-                <Tag type={type} className={tagClasses} />
+                <Tag type={capitalizeFirstLetter(type)} className={tagClasses} />
                 <EllipsisVertical className='text-purple-light' />
             </div>
         </div>
