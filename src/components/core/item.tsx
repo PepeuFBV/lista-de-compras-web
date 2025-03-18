@@ -5,21 +5,38 @@ import { EllipsisVertical } from 'lucide-react'
 import { Item as ItemData } from '@/types/item'
 import { Tag } from '@/components/ui/tag'
 import { Checkbox } from '@/components/ui/checkbox'
+import { Button } from '@/components/ui/button'
+import {
+    Popover,
+    PopoverTrigger,
+    PopoverContent
+} from '@/components/ui/popover'
 import { cn } from '@/lib/utils'
 
 interface ItemProps {
     item: ItemData
     updateItem: (item: ItemData) => void
+    deleteItem: (id: string) => void
     className?: string
 }
-const Item: React.FC<ItemProps> = ({ item, updateItem, className }) => {
+const Item: React.FC<ItemProps> = ({ item, updateItem, deleteItem, className }) => {
 
-    const { name, amount, unit, type, status } = item
+    const { id, name, amount, unit, type, status } = item
+    const [popoverOpen, setPopoverOpen] = useState(false)
 
     async function handleCheckboxClick() {
         const updatedItem: ItemData = { ...item, status: status === 'done' ? 'todo' : 'done' }
         try {
             await updateItem(updatedItem)
+        } catch (error) {
+            throw error
+        }
+    }
+
+    async function handleDelete() {
+        try {
+            await deleteItem(id)
+            setPopoverOpen(false)
         } catch (error) {
             throw error
         }
@@ -50,7 +67,14 @@ const Item: React.FC<ItemProps> = ({ item, updateItem, className }) => {
             </div>
             <div className='flex items-center gap-3'>
                 <Tag type={capitalizeFirstLetter(type)} className={tagClasses} />
-                <EllipsisVertical className='text-purple-light' />
+                <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
+                    <PopoverTrigger className='cursor-pointer'>
+                        <EllipsisVertical className='text-purple-light' />
+                    </PopoverTrigger>
+                    <PopoverContent className='max-w-[160px] bg-background-secondary border border-border rounded-lg flex flex-col gap-2 p-2'>
+                        <Button onClick={handleDelete}>Excluir</Button>
+                    </PopoverContent>
+                </Popover>
             </div>
         </div>
     )
