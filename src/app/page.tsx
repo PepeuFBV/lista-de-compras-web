@@ -39,7 +39,7 @@ export default function Home() {
                     </div>
                     <AddButton className='mt-6' />
                 </div>
-                <Items />
+                <Items className='w-full max-w-[720px]' />
             </div>
         </main>
     )
