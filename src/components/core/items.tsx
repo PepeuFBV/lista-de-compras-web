@@ -17,10 +17,6 @@ const Items: React.FC<ItemsProps> = ({ className }) => {
 
     const { items, setItems } = context
 
-    const addItem = (newItem: ItemType) => {
-        setItems([...items, newItem])
-    }
-
     async function update(updatedItem: ItemType) {
         try {
             await updateItem(updatedItem.id, updatedItem)
