@@ -14,6 +14,7 @@ import {
 import { itemTypes } from '@/data/item-types'
 import { AddButton } from '@/components/core/add-button'
 import { createItem } from '@/services/backend'
+import { toast } from 'sonner'
 import { Item, ItemRequest } from '@/types/item'
 import { cn } from '@/lib/utils'
 
@@ -86,6 +87,7 @@ const AddItem: React.FC<AddItemProps> = ({ className }) => {
         try {
             const item: Item = await createItem(newItem)
             setItems([...items, item])
+            toast.success('Item adicionado com sucesso.')
         } catch (error) {
             console.error(error)
         }
