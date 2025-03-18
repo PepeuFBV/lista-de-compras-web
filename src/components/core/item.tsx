@@ -34,7 +34,7 @@ const Item: React.FC<ItemProps> = ({ item, className }) => {
             <div className='flex gap-4 items-center'>
                 <Checkbox checked={status === 'done'} onClick={handleCheckboxClick} />
                 <div className='flex flex-col'>
-                    <h2 className={nameClasses}>{name}</h2>
+                    <h2 className={cn('capitalize', nameClasses)}>{name}</h2>
                     <p className={amountClasses}>{amount} {unit}</p>
                 </div>
             </div>
