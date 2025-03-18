@@ -11,9 +11,9 @@ import {
 } from '@/components/ui/select'
 
 interface UnitDropdownProps {
-    amount: string
+    amount: number
     unit: string
-    onAmountChange: (value: string) => void
+    onAmountChange: (value: number) => void
     onUnitChange: (value: string) => void
 }
 const UnitDropdown: React.FC<UnitDropdownProps> = ({ amount, unit, onAmountChange, onUnitChange }) => {
@@ -21,10 +21,11 @@ const UnitDropdown: React.FC<UnitDropdownProps> = ({ amount, unit, onAmountChang
         <div className='flex'>
             <Input
                 label='Quantidade'
+                type='number'
                 className='w-[80px]'
                 inputClassName='rounded-r-none'
                 value={amount}
-                onChange={(e) => onAmountChange(e.target.value)}
+                onChange={(e) => onAmountChange(Number(e.target.value))}
             />
             <Select
                 value={unit}
