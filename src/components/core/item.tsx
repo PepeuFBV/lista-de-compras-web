@@ -11,15 +11,17 @@ import {
     PopoverTrigger,
     PopoverContent
 } from '@/components/ui/popover'
+import { motion as m } from 'motion/react'
 import { cn } from '@/lib/utils'
 
 interface ItemProps {
     item: ItemData
     updateItem: (item: ItemData) => void
     deleteItem: (id: string) => void
+    animationDelay?: number
     className?: string
 }
-const Item: React.FC<ItemProps> = ({ item, updateItem, deleteItem, className }) => {
+const Item: React.FC<ItemProps> = ({ item, animationDelay = 0, updateItem, deleteItem, className }) => {
 
     const { id, name, amount, unit, type, status } = item
     const [popoverOpen, setPopoverOpen] = useState(false)
@@ -57,7 +59,13 @@ const Item: React.FC<ItemProps> = ({ item, updateItem, deleteItem, className }) 
     const tagClasses = cn({ 'opacity-50': status === 'done' })
 
     return (
-        <div className={containerClasses}>
+        <m.div
+            className={containerClasses}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.3, delay: animationDelay }}
+        >
             <div className='flex gap-4 items-center'>
                 <Checkbox checked={status === 'done'} onClick={handleCheckboxClick} />
                 <div className='flex flex-col gap-[6px]'>
@@ -76,7 +84,7 @@ const Item: React.FC<ItemProps> = ({ item, updateItem, deleteItem, className }) 
                     </PopoverContent>
                 </Popover>
             </div>
-        </div>
+        </m.div>
     )
 }
 
