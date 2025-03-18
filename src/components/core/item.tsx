@@ -12,6 +12,7 @@ interface ItemProps {
     className?: string
 }
 const Item: React.FC<ItemProps> = ({ item, className }) => {
+
     const { name, amount, unit, type, status: initialStatus } = item
     const [status, setStatus] = useState(initialStatus)
 

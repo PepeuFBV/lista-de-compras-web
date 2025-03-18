@@ -1,35 +1,20 @@
 'use client'
 
-import React, { useContext } from 'react'
+import React from 'react'
 import { UnitDropdown } from '@/components/core/unit-dropdown'
 import { Input } from '@/components/ui/input'
 import {
     Select,
     SelectTrigger,
     SelectContent,
-    SelectItem
+    SelectItem,
+    SelectValue
 } from '@/components/ui/select'
-import { ItemsContext } from '@/context/context'
 import { itemTypes } from '@/data/item-types'
 import { AddButton } from '@/components/core/add-button'
-import { SelectValue } from '@radix-ui/react-select'
-import { Item } from '@/components/core/item'
-import type { Item as ItemType } from '@/types/item'
+import { Items } from '@/components/core/items'
 
 export default function Home() {
-    const context = useContext(ItemsContext)
-
-    if (!context) {
-        throw new Error('YourComponent must be used within a ContextProvider')
-    }
-
-    const { items, setItems } = context
-
-    // Example usage of items and setItems
-    const addItem = (newItem: ItemType) => {
-        setItems([...items, newItem])
-    }
-
     return (
         <main className='h-full w-full flex flex-col justify-center items-center'>
             <div className='h-full w-2/3 flex flex-col items-center gap-10 mt-24 mb-24'>
@@ -54,11 +39,7 @@ export default function Home() {
                     </div>
                     <AddButton className='mt-6' />
                 </div>
-                <section className='w-full max-w-[720px] flex flex-col items-center gap-3'>
-                    {items.map((item, index) => (
-                        <Item key={index} item={item} />
-                    ))}
-                </section>
+                <Items />
             </div>
         </main>
     )
