@@ -4,6 +4,7 @@ import { Item } from '@/components/core/item'
 import { updateItem, deleteItem } from '@/services/backend'
 import type { Item as ItemType } from '@/types/item'
 import { AnimatePresence } from 'framer-motion'
+import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
 
 const delayMultipler: number = 0.3
@@ -30,6 +31,7 @@ const Items: React.FC<ItemsProps> = ({ className }) => {
                 return item
             })
             setItems(updatedItems)
+            toast.success('Item atualizado com sucesso.')
         } catch (error) {
             console.error(error)
         }
@@ -39,6 +41,7 @@ const Items: React.FC<ItemsProps> = ({ className }) => {
         try {
             await deleteItem(id)
             setItems([...items.filter(item => item.id !== id)])
+            toast.success('Item deletado com sucesso.')
         } catch (error) {
             console.error(error)
         }
