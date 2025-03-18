@@ -14,7 +14,7 @@ import {
 import { itemTypes } from '@/data/item-types'
 import { AddButton } from '@/components/core/add-button'
 import { createItem } from '@/services/backend'
-import { Item, ItemRequest, Item as ItemType } from '@/types/item'
+import { Item, ItemRequest } from '@/types/item'
 import { cn } from '@/lib/utils'
 
 interface AddItemProps {
