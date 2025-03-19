@@ -1,5 +1,8 @@
 # Lista de Compras Web
 
+> [!WARNING]
+> The current web deploymeny may be slow due to render's inactivity policy
+
 ## Overview
 
 Lista de Compras Web is a web application designed to help users manage their shopping lists. The application allows users to add, update, and delete items from their shopping list, categorize items, and track the status of each item.
